@@ -7,5 +7,5 @@
 
 
 ## Preview
-    Click on video foe detailed video
+    Click on video for detailed video
 [![Awesome ](./project-preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
