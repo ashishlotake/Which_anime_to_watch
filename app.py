@@ -11,7 +11,7 @@ import numpy as np
 import math
 import warnings
 import seaborn as sns
-warnings.filterwarnings("ignore")
+# warnings.filterwarnings("ignore")
 
 ## Website heading
 st.title("Which Anime to watch ? ")
