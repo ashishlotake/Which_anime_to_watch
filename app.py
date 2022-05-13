@@ -166,7 +166,7 @@ try:
     st.caption(f_db["tags"].iloc[0])
     text_ = "More Info [Click here]({link})".format(link=info_url)
     st.markdown(text_,unsafe_allow_html=True)
-    st.balloons()
+    # st.balloons()
 
 
 
