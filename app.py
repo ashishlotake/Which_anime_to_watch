@@ -1,7 +1,3 @@
-from calendar import c
-from optparse import Option
-from os import link
-from turtle import color
 import streamlit as st
 import pandas as pd
 import requests
@@ -9,7 +5,7 @@ import matplotlib.pyplot as plt
 import datetime
 import numpy as np
 import math
-import warnings
+# import warnings
 import seaborn as sns
 # warnings.filterwarnings("ignore")
 
@@ -47,11 +43,11 @@ def anime_year(x):
         # if the year is not given, i will give that anime any year randomly between current year and the least year
 
 df_1["year"] =  df_1["animeSeason"].apply(anime_year)
+def git_source(x): return x[0]
+df_1["sources"]= df_1["sources"].apply(git_source)
 
 ### defining another dataframe, to show only limited/useful imformation to the user
-df_2 = df_1[["title", "type", "episodes", "status", "tags","picture","year"]]
-## adding source URL, if user want to read more about the anime
-df_2["sources"] = df_1["sources"].apply(lambda x : x[0])
+df_2 = df_1[["title", "type", "episodes", "status", "tags","picture","year","sources"]].copy()
 
 ## year slider, to make the dataframe more interactive for user
  
