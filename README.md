@@ -7,4 +7,4 @@
 
 
 ## Preview
-[![Awesome App](./project-preview_cLsjM5ki.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
+[![Awesome App](./project-preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
