@@ -24,7 +24,7 @@ df_1 = pd.DataFrame(load_data(data_url)["data"])
 # data_load_state.text("Done!")
 
 ### 2.
-# current year 
+# getting current year, to give random values for all those anime, which dont have year
 current_year = datetime.datetime.now().year
 
 def anime_year(x):
@@ -43,23 +43,28 @@ def anime_year(x):
 df_1["year"] =  df_1["animeSeason"].apply(anime_year)
 def git_source(x): return x[0]
 df_1["sources"]= df_1["sources"].apply(git_source)
+df_1.title = df_1.title.apply(lambda x : x.lower())
 
 ### defining another dataframe, to show only limited/useful imformation to the user
 df_2 = df_1[["title", "type", "episodes", "status", "tags","picture","year","sources"]].copy()
 
-## year slider, to make the dataframe more interactive for user
- 
-year_user = st.slider("See anime released according to year", 1907, current_year)
+st.subheader("Lets have a look at dataset")
+### year slider, to make the dataframe more interactive for user
 
+# max year for slider
+max_year = max(df_2["year"])
+
+year_user = st.slider("", 1907, max_year)
+
+## dataframe
 df_user = df_2[["title", "type", "episodes", "status","year"]]
-show_user = df_user[(df_user["year"] == year_user )]
+
+show_user = df_user[((df_user["year"] == year_user ))]
 st.dataframe(show_user)
 
-st.caption(f"Total {len(df_1)} animes")
-st.subheader("Before selecting your preference, have a look at data spread!")
+st.caption(f"Total {len(df_1)} animes and constantly updating .....")
 
-
-# using seaborn
+## plot--> vizulatization
 fig = plt.figure(figsize=(8, 3))
 sns.set()
 custom_params = {"axes.spines.right": False, "axes.spines.top": False}
@@ -74,11 +79,11 @@ plt.axvline(x = year_user,color="y",linewidth=3, animated=True)
 vv = df_2[df_2["year"]==year_user]
 st.write(str(len(vv)), "animes released in ", str(year_user))
 plt.axhline(y=len(vv),color="r", linewidth=1, label="fvs")
-
-# sns,k
 st.pyplot(fig)
+st.caption("As we can see that this is LEFT/NEGATIVE SKEWED histogram, large number of animes were released after 2005")
 
-st.write("As we can see that this is LEFT/NEGATIVE SKEWED histogram, large number of animes were released after 2005")
+## percentage text
+st.subheader("Before selecting your preference, have a look at this!")
 
 for i in [90,95, 99,99.5,99.9]:
     st.write(i," percent of animes have less than ",math.trunc(np.percentile(df_2['episodes'], i)), " episodes, which equals to ", math.trunc(math.trunc(np.percentile(df_2['episodes'], i)) * 24/60), " hours")
@@ -109,7 +114,7 @@ for i in stop_word:
         f_set_tag.remove(i)
 
 
-st.subheader("Lets Start")
+st.subheader("Lets start finding an anime for you")
 ## multipel tags selector
 label = "select multiple genre" ## tell user what he is selecting for 
 opt_def = ["cartoon","shounen","manga","anime"] ## if user dosen't select anything, default options
@@ -118,7 +123,7 @@ user_tags = st.multiselect(label, f_set_tag,opt_def)
 
 ## ask user to define the number of episode the anime should have
 user_episode = st.slider("Select the number of episode the anime should have.", 1, 3000, 52)
-st.write("1 episode = 24 mins; approx ",math.trunc(user_episode*24/60), " hours")
+st.caption(f"1 episode = 24 mins; therefore {user_episode} episodes is approx {math.trunc(user_episode*24/60)} hours")
 
 ## select the "greater" or "less" than or "equal" to
 user_var = st.selectbox(f"Greater Than or Smaller Than or Equal to {user_episode}" ,("Less", "Greater", "Equal"))
