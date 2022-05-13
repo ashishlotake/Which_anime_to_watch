@@ -52,7 +52,7 @@ df_2 = df_1[["title", "type", "episodes", "status", "tags","picture","year","sou
 ## year slider, to make the dataframe more interactive for user
  
 year_user = st.slider("See anime released according to year", 1907, current_year)
-st.write(str(len(vv)), "animes released in ", str(year_user))
+
 df_user = df_2[["title", "type", "episodes", "status","year"]]
 show_user = df_user[(df_user["year"] == year_user )]
 st.dataframe(show_user)
@@ -74,6 +74,7 @@ plt.xlabel("Year")
 
 plt.axvline(x = year_user,color="y",linewidth=3, animated=True)
 vv = df_2[df_2["year"]==year_user]
+st.write(str(len(vv)), "animes released in ", str(year_user))
 plt.axhline(y=len(vv),color="r", linewidth=1, label="fvs")
 
 # sns,k
