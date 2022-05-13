@@ -7,5 +7,5 @@
 
 
 ## Preview
-    Click on video for detailed video
+for [Video](https://www.youtube.com/watch?v=gDW5MkHADWY) && [Website](https://bit.ly/which-anime-2-watch)
 [![Awesome ](./project-preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
