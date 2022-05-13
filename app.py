@@ -19,7 +19,7 @@ st.caption("I will give you a random anime based on your selected option, btw 90
 
 ### 1. ----> loading data
 data_url = "https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database-minified.json" 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def load_data(url):
     r = requests.get(url)
     data = r.json()
