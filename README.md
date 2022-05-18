@@ -7,5 +7,5 @@
 
 
 ## Preview
-for [Video](https://www.youtube.com/watch?v=gDW5MkHADWY) && [Website](https://bit.ly/which-anime-2-watch)
+for [Video](https://www.youtube.com/watch?v=gDW5MkHADWY) && [Website](https://share.streamlit.io/ashishlotake/which_anime_to_watch/app.py)
 [![Awesome ](./project-preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
