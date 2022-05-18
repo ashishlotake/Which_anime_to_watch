@@ -8,8 +8,16 @@ import math
 import seaborn as sns
 
 ## Website heading
-st.title("Which Anime to watch ? ")
-st.caption("I will give you a random anime based on your selected option, btw 90% of animes have less than 39 episodes, so you can easily finish an anime in weekend.")
+
+st.markdown("""
+    ## :fire: Which Anime to watch ? 
+    [![Twitter](https://img.shields.io/twitter/url?label=Twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Fnainia_ayoub)](https://www.twitter.com/Ashish02lotake)
+    [![Linkedin](https://img.shields.io/twitter/url?label=Linkedin&logo=linkedin&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fayoub-nainia%2F%3Flocale%3Den_US)](https://www.linkedin.com/in/ashish-lotake/?locale=en_US)
+    [![GitHub](https://img.shields.io/twitter/url?label=Github&logo=GitHub&style=social&url=https%3A%2F%2Fgithub.com%2Fnainiayoub)](https://github.com/ashishlotake)
+
+    I will give you a random anime based on your selected option, btw 90% of animes have less than 39 episodes, so you can easily finish an anime in weekend.
+""")
+
 
 ### 1. ----> loading data
 data_url = "https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database-minified.json" 
