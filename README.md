@@ -1,3 +1,4 @@
+[![website](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fashishlotake.pages.dev%2F)](https://ashishlotake.pages.dev/)
 # Which Anime to Watch?
 
  In the project, based on user input preference, I will give an anime.
@@ -7,5 +8,5 @@
 
 
 ## Preview
-for [Video](https://www.youtube.com/watch?v=gDW5MkHADWY) && [Website](https://share.streamlit.io/ashishlotake/which_anime_to_watch/app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ashishlotake/which_anime_to_watch/app.py)
 [![Awesome ](./project-preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
