@@ -9,4 +9,4 @@
 
 ## Preview
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ashishlotake/which_anime_to_watch/app.py)
-[![Awesome ](./project-preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
+[![Awesome ](./anime_project_preview.gif)](https://www.youtube.com/watch?v=gDW5MkHADWY)
